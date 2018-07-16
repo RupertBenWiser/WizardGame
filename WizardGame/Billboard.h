@@ -5,14 +5,15 @@
 class Billboard
 {
 private:
-	float _r;
-	float _g;
-	float _b;
+	float _x;
+	float _y;
+	float _z;
+
 	Model _model = Model(std::vector<float> {
-		-1.0f, 1.0f, -10.0f,
-		-1.0f,  -1.0f, -10.0f,
-		 1.0f,  -1.0f, -10.0f,
-		 1.0f, 1.0f, -10.0f
+		-1.0f, 1.0f, 0.0f,
+		-1.0f,  -1.0f, 0.0f,
+		 1.0f,  -1.0f, 0.0f,
+		 1.0f, 1.0f, 0.0f
 	}, std::vector<float> {
 		0.0f, 0.0f,
 		0.0f, 1.0f,
@@ -20,9 +21,8 @@ private:
 		1.0f, 0.0f
 	});
 	Image _image;
-	GLuint _tex;
 public:
-	Billboard(float, float, float);
+	Billboard(char*, float, float, float);
 
 	void render(void);
 };

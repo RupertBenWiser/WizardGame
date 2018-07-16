@@ -3,25 +3,27 @@
 #include "stb_image.h"
 
 
-Image::Image()
+Image::Image(char* texture)
 {
-	rgb = stbi_load("test.png", &width, &height, &bpp, STBI_rgb_alpha);
-}
+	int width, height, bpp;
+	unsigned char* rgb = stbi_load(texture, &width, &height, &bpp, STBI_rgb_alpha);
 
+	glGenTextures(1, &_tex);
+	glBindTexture(GL_TEXTURE_2D, _tex);
 
-Image::~Image()
-{
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, width, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgb);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+
 	stbi_image_free(rgb);
 }
 
-unsigned char* Image::getImage() {
-	return rgb;
+void Image::bind() {
+	glBindTexture(GL_TEXTURE_2D, _tex);
 }
 
-int Image::getWidth() {
-	return this->width;
-}
-
-int Image::getHeight() {
-	return height;
+void Image::unbind() {
+	glBindTexture(GL_TEXTURE_2D, 0);
 }

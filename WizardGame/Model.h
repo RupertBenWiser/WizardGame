@@ -11,6 +11,6 @@ private:
 public:
 	Model(std::vector<float> v, std::vector<float> t): vertices(v), texCoords(t) {}
 
-	void render(void);
+	void render(float, float, float);
 };
 

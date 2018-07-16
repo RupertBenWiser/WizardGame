@@ -1,18 +1,15 @@
 #pragma once
+#include "gl.h"
 
 class Image
 {
 private:
-	int width;
-	int height;
-	int bpp;
-	unsigned char* rgb;
+	GLuint _tex;
 public:
-	Image();
-	~Image();
+	Image(char* texture);
 
-	unsigned char* getImage();
-	int getWidth();
-	int getHeight();
+	void bind();
+
+	void unbind();
 };
 

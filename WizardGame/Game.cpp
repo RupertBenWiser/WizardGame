@@ -1,5 +1,6 @@
 #include "gl.h"
 #include "Billboard.h"
+#include <string>
 
 const int WIDTH = 800;
 const int HEIGHT = 600;
@@ -11,7 +12,7 @@ int main() {
 		return 1;
 	}
 
-	window = glfwCreateWindow(WIDTH, HEIGHT, "GAME", NULL, NULL);
+	window = glfwCreateWindow(WIDTH, HEIGHT, "Wizard Game", NULL, NULL);
 
 	glfwMakeContextCurrent(window);
 
@@ -26,7 +27,8 @@ int main() {
 
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	Billboard test(1.0f, 0.0f, 0.0f);
+	std::string filename = "test.png";
+	Billboard test(&filename[0], 0, 0, -10);
 
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

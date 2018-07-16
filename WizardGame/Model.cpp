@@ -1,7 +1,7 @@
 #include "Model.h"
 #include <iostream>
 
-void Model::render(void) {
+void Model::render(float offsetX, float offsetY, float offsetZ) {
 	glBegin(GL_QUADS);
 	int i = 0;
 	int t = 0;
@@ -14,7 +14,7 @@ void Model::render(void) {
 		float v = this->texCoords[t++];
 
 		glTexCoord2f(u, v);
-		glVertex3f(x, y, z);
+		glVertex3f(x + offsetX, y + offsetY, z + offsetZ);
 	}
 	glEnd();
 }
