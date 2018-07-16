@@ -1,5 +1,5 @@
 #include "gl.h"
-#include "Box.h"
+#include "Billboard.h"
 
 const int WIDTH = 800;
 const int HEIGHT = 600;
@@ -21,14 +21,17 @@ int main() {
 	gluPerspective(45, WIDTH / HEIGHT, 0.01f, 1000.0f);
 	glMatrixMode(GL_MODELVIEW);
 
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_DEPTH_TEST);
+
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	Box box(1.0f, 0.0f, 0.0f);
+	Billboard test(1.0f, 0.0f, 0.0f);
 
 	while (!glfwWindowShouldClose(window)) {
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		box.render();
+		test.render();
 
 		glfwPollEvents();
 		glfwSwapBuffers(window);
