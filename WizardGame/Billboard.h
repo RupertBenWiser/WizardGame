@@ -22,7 +22,7 @@ private:
 	});
 	Image _image;
 public:
-	Billboard(char*, float, float, float);
+	Billboard(const char*, float, float, float);
 
 	void render(void);
 };

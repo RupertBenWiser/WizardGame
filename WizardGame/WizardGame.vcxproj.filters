@@ -25,9 +25,6 @@
     <Filter Include="Source Files\Engine\Shapes">
       <UniqueIdentifier>{9e54e16b-3b58-4b82-a1b2-6be1175508e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Engine\Events">
-      <UniqueIdentifier>{7e6a69bf-d0a5-4ae9-9490-f7b4cd8d2398}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Game">
       <UniqueIdentifier>{a4f42ca2-b44b-432a-8eaf-02874377edc9}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,9 @@
     <ClCompile Include="StaticProp.cpp">
       <Filter>Source Files\Game\Props</Filter>
     </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>Source Files\Game\Props</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -86,9 +86,6 @@
     <ClInclude Include="Model.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="KeyEvent.h">
-      <Filter>Header Files\Engine\Events</Filter>
-    </ClInclude>
     <ClInclude Include="gl.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
@@ -102,6 +99,9 @@
       <Filter>Header Files\Game\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="StaticProp.h">
+      <Filter>Header Files\Game\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
       <Filter>Header Files\Game\Props</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,9 +6,6 @@
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-const int WIDTH = 800;
-const int HEIGHT = 600;
-
 Scene* currentScene = nullptr;
 
 int main() {
@@ -42,12 +39,18 @@ int main() {
 
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		keyEvents.clear();
 
 		glfwPollEvents();
 
 		currentScene->update();
+
+		glPushMatrix();
+		glTranslatef(cameraX, cameraY, cameraZ);
+		glRotatef(cameraRotation, 1, 0, 0);
 		currentScene->render();
+		glPopMatrix();
+
+		Sleep(1000.0f / 60.0f);
 
 		glfwSwapBuffers(window);
 	}
@@ -58,6 +61,5 @@ int main() {
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-	KeyEvent event(action, key);
-	keyEvents.push_back(event);
+	pressed[key] = action;
 }

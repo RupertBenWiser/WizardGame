@@ -3,7 +3,7 @@
 #include "stb_image.h"
 
 
-Image::Image(char* texture)
+Image::Image(const char* texture)
 {
 	int width, height, bpp;
 	unsigned char* rgb = stbi_load(texture, &width, &height, &bpp, STBI_rgb_alpha);

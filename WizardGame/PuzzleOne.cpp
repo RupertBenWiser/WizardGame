@@ -1,11 +1,8 @@
 #include "PuzzleOne.h"
-#include <iostream>
 
 void PuzzleOne::start() {
-	std::string filename = "test.png";
-	StaticProp* test = new StaticProp(&filename[0], 0, 0, -10);
-
-	this->props.push_back(test);
+	//this->props.push_back(new StaticProp("test.png", 0, 0, -10));
+	this->props.push_back(new Wizard(0, 0, -5));
 }
 
 void PuzzleOne::update()  {

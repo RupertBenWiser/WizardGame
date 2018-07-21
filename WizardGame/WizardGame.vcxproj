@@ -129,12 +129,12 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="PuzzleOne.cpp" />
     <ClCompile Include="StaticProp.cpp" />
+    <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Billboard.h" />
     <ClInclude Include="gl.h" />
     <ClInclude Include="Image.h" />
-    <ClInclude Include="KeyEvent.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Prop.h" />
     <ClInclude Include="PuzzleOne.h" />
@@ -142,6 +142,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateImpl.h" />
     <ClInclude Include="StaticProp.h" />
+    <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

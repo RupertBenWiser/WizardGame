@@ -3,6 +3,7 @@
 #include "Prop.h"
 #include "Scene.h"
 #include "StaticProp.h"
+#include "Wizard.h"
 
 class PuzzleOne: public Scene
 {

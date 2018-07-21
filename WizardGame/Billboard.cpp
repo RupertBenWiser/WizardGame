@@ -1,6 +1,6 @@
 #include "Billboard.h"
 
-Billboard::Billboard(char* texture, float x, float y, float z) : _image(texture)
+Billboard::Billboard(const char* texture, float x, float y, float z) : _image(texture)
 {
 	_x = x;
 	_y = y;

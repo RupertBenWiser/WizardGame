@@ -1,4 +1,6 @@
 #pragma once
+#include "StateImpl.h"
+#include "gl.h"
 
 class Prop {
 public:

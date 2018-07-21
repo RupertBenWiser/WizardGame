@@ -6,7 +6,7 @@ class Image
 private:
 	GLuint _tex;
 public:
-	Image(char* texture);
+	Image(const char* texture);
 
 	void bind();
 

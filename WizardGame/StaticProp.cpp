@@ -1,6 +1,6 @@
 #include "StaticProp.h"
 
-StaticProp::StaticProp(char* texture, float x, float y, float z): _billboard(texture, x, y, z) {}
+StaticProp::StaticProp(const char* texture, float x, float y, float z): _billboard(texture, x, y, z) {}
 
 void StaticProp::start() {
 
