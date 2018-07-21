@@ -1,8 +1,6 @@
 #include "Wizard.h"
-#include <iostream>
 
 Wizard::Wizard(float x, float y, float z) : _x(x), _y(y), _z(z), _billboard("test.png", 0, 0, 0) {
-
 }
 
 void Wizard::start() {

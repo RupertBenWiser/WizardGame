@@ -10,8 +10,8 @@ void Model::render(float offsetX, float offsetY, float offsetZ) {
 		float y = this->vertices[i++];
 		float z = this->vertices[i++];
 
-		float u = this->texCoords[t++];
-		float v = this->texCoords[t++];
+		float u = (*this->texCoords)[t++];
+		float v = (*this->texCoords)[t++];
 
 		glTexCoord2f(u, v);
 		glVertex3f(x + offsetX, y + offsetY, z + offsetZ);
