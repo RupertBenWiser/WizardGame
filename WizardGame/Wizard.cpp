@@ -6,12 +6,9 @@ Wizard::Wizard(float x, float y, float z) :
 	_animationController(4, 4, new std::vector<int> {
 		0, 4, 0, 0
 	}) {
+	_animationController.setBillboard(&_billboard);
 	_animationController.setAnimationSpeed(0.2f);
 	_animationController.setAnimation(0);
-	_billboard.setAnimation(
-		_animationController.getAnimation(),
-		_animationController.getAnimations()
-	);
 }
 
 void Wizard::start() {
@@ -36,32 +33,19 @@ void Wizard::update() {
 		_vZ += SPEED;
 	}
 
-	if (!pressed[GLFW_KEY_LEFT] &&
+	bool noKeyPress = !pressed[GLFW_KEY_LEFT] &&
 		!pressed[GLFW_KEY_RIGHT] &&
 		!pressed[GLFW_KEY_UP] &&
-		!pressed[GLFW_KEY_DOWN]
-	) {
-		if (_animationController.getAnimation() != 0) {
+		!pressed[GLFW_KEY_DOWN];
+
+	if (noKeyPress && _animationController.getAnimation() != 0) {
 			_animationController.setAnimation(0);
-			_billboard.setAnimation(
-				_animationController.getAnimation(),
-				_animationController.getAnimations()
-			);
-		}
 	}
-	else if (_animationController.getAnimation() != 1) {
+	else if (!noKeyPress && _animationController.getAnimation() != 1) {
 		_animationController.setAnimation(1);
-		_billboard.setAnimation(
-			_animationController.getAnimation(),
-			_animationController.getAnimations()
-		);
 	}
 
 	_animationController.play();
-	_billboard.setFrame(
-		_animationController.getCurrentFrame(),
-		_animationController.getFrames()
-	);
 
 	if (_vX > 0) {
 		_vX -= SPEED / 2.0f;

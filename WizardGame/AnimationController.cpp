@@ -9,6 +9,13 @@ AnimationController::AnimationController(int frames, int animations, std::vector
 void AnimationController::setAnimation(int animation) {
 	_currentFrame = 0.0f;
 	_animation = animation;
+
+	if (_billboard != nullptr) {
+		_billboard->setAnimation(
+			this->getAnimation(),
+			this->getAnimations()
+		);
+	}
 }
 
 void AnimationController::setAnimationSpeed(float speed) {
@@ -21,6 +28,16 @@ void AnimationController::play() {
 	if (_currentFrame > maxFrame) {
 		_currentFrame = 0.0f;
 	}
+	if (_billboard != nullptr) {
+		_billboard->setFrame(
+			this->getCurrentFrame(),
+			this->getFrames()
+		);
+	}
+}
+
+void AnimationController::setBillboard(Billboard* billboard) {
+	_billboard = billboard;
 }
 
 int AnimationController::getCurrentFrame() {
