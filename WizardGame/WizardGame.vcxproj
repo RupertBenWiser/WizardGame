@@ -127,12 +127,21 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PuzzleOne.cpp" />
+    <ClCompile Include="StaticProp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Billboard.h" />
     <ClInclude Include="gl.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="KeyEvent.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Prop.h" />
+    <ClInclude Include="PuzzleOne.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateImpl.h" />
+    <ClInclude Include="StaticProp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

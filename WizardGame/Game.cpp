@@ -1,9 +1,15 @@
-#include "gl.h"
-#include "Billboard.h"
 #include <string>
+#include "gl.h"
+#include "State.h"
+#include "Scene.h"
+#include "PuzzleOne.h"
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
 const int WIDTH = 800;
 const int HEIGHT = 600;
+
+Scene* currentScene = nullptr;
 
 int main() {
 	GLFWwindow* window;
@@ -27,19 +33,31 @@ int main() {
 
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	std::string filename = "test.png";
-	Billboard test(&filename[0], 0, 0, -10);
+	glfwSetKeyCallback(window, key_callback);
+
+	PuzzleOne puzzleOne;
+
+	currentScene = &puzzleOne;
+	currentScene->start();
 
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		test.render();
+		keyEvents.clear();
 
 		glfwPollEvents();
+
+		currentScene->update();
+		currentScene->render();
+
 		glfwSwapBuffers(window);
 	}
 
 	glfwTerminate();
 
 	return 0;
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+	KeyEvent event(action, key);
+	keyEvents.push_back(event);
 }

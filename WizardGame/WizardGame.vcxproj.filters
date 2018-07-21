@@ -13,33 +13,96 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{b681104c-73b7-4f44-9691-71d5a7fa4b24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Shapes">
+      <UniqueIdentifier>{f3481222-f12f-4646-a41c-19440899511b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{16fd9d62-804b-47bd-95d4-9f3ccf057c0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Shapes">
+      <UniqueIdentifier>{9e54e16b-3b58-4b82-a1b2-6be1175508e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Events">
+      <UniqueIdentifier>{7e6a69bf-d0a5-4ae9-9490-f7b4cd8d2398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{a4f42ca2-b44b-432a-8eaf-02874377edc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\State">
+      <UniqueIdentifier>{51d4fc39-3d96-4211-92c1-e64c066a3600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{25e96110-a619-4ded-a271-e90e83b12dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Scenes">
+      <UniqueIdentifier>{78629547-72e5-442a-ba04-e0b6ad888726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Scenes">
+      <UniqueIdentifier>{8ce7840b-2c78-49f4-b517-19678bd8b970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Props">
+      <UniqueIdentifier>{735dd960-5df9-422d-ac8e-39c2b009d17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Props">
+      <UniqueIdentifier>{716ae35a-cf1c-4d51-9b6e-4be93c2dacba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Billboard.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="Image.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PuzzleOne.cpp">
+      <Filter>Source Files\Game\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticProp.cpp">
+      <Filter>Source Files\Game\Props</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gl.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\Game\State</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="StateImpl.h">
+      <Filter>Header Files\Game\State</Filter>
     </ClInclude>
     <ClInclude Include="Billboard.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Shapes</Filter>
     </ClInclude>
     <ClInclude Include="Image.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEvent.h">
+      <Filter>Header Files\Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="gl.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Prop.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PuzzleOne.h">
+      <Filter>Header Files\Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticProp.h">
+      <Filter>Header Files\Game\Props</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
