@@ -69,6 +69,9 @@
     <ClCompile Include="Wizard.cpp">
       <Filter>Source Files\Game\Props</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationController.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Wizard.h">
       <Filter>Header Files\Game\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationController.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
