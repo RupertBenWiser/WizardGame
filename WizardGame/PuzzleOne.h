@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "StaticProp.h"
 #include "Wizard.h"
+#include "Floor.h"
 
 class PuzzleOne: public Scene
 {

@@ -2,6 +2,7 @@
 
 void PuzzleOne::start() {
 	//this->props.push_back(new StaticProp("test.png", 0, 0, -10));
+	this->props.push_back(new Floor("resources/images/floor.png", 0, 0, 20.0f, 20.0f));
 	this->props.push_back(new Wizard(0, 0, -5));
 }
 

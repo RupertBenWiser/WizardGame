@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="AnimationController.cpp" />
     <ClCompile Include="Billboard.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KinematicProp.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="AnimationController.h" />
     <ClInclude Include="Billboard.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="gl.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KinematicProp.h" />

@@ -75,6 +75,9 @@
     <ClCompile Include="KinematicProp.cpp">
       <Filter>Source Files\Game\Props</Filter>
     </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>Source Files\Engine\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="KinematicProp.h">
       <Filter>Header Files\Game\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>Header Files\Engine\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
