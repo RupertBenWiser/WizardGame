@@ -43,6 +43,7 @@ int main() {
 	currentScene->start();
 
 	while (!glfwWindowShouldClose(window)) {
+		double startTime = glfwGetTime();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glfwPollEvents();
@@ -56,9 +57,12 @@ int main() {
 		currentScene->render();
 		glPopMatrix();
 
-		Sleep(1000.0f / 60.0f);
-
 		glfwSwapBuffers(window);
+
+		double finishTime = glfwGetTime();
+
+		// TODO: need to add delta variable
+		Sleep((1000.0f / 120.0f) - (finishTime - startTime));
 	}
 
 	glfwTerminate();
