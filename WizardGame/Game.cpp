@@ -3,10 +3,13 @@
 #include "State.h"
 #include "Scene.h"
 #include "PuzzleOne.h"
+#include "Math.h"
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+void updateCamera();
 
 Scene* currentScene = nullptr;
+Prop* focusedProp = nullptr;
 
 int main() {
 	GLFWwindow* window;
@@ -45,10 +48,11 @@ int main() {
 		glfwPollEvents();
 
 		currentScene->update();
+		updateCamera();
 
 		glPushMatrix();
-		glTranslatef(cameraX, cameraY, cameraZ);
 		glRotatef(cameraRotation, 1, 0, 0);
+		glTranslatef(-cameraX, cameraY, -cameraZ - cameraOffset);
 		currentScene->render();
 		glPopMatrix();
 
@@ -60,6 +64,13 @@ int main() {
 	glfwTerminate();
 
 	return 0;
+}
+
+void updateCamera() {
+	if (focusedProp != nullptr) {
+		cameraX += (focusedProp->getX() - cameraX) / 5.0f;
+		cameraZ += (focusedProp->getZ() - cameraZ) / 5.0f;
+	}
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {

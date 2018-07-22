@@ -10,6 +10,7 @@ Billboard::Billboard(const char* texture, float x, float y, float z, float w, fl
 	_x = x;
 	_y = y;
 	_z = z;
+	_r = -45.0f;
 }
 
 Billboard::Billboard(const char* texture, float x, float y, float z) : Billboard(texture, x, y, z, 1.0f, 1.0f)

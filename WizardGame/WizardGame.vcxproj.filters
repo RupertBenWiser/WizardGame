@@ -46,6 +46,9 @@
     <Filter Include="Header Files\Game\Props">
       <UniqueIdentifier>{716ae35a-cf1c-4d51-9b6e-4be93c2dacba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Helpers">
+      <UniqueIdentifier>{d3a3fed5-759d-423d-a6c1-29ee99e17cb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -121,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="Floor.h">
       <Filter>Header Files\Engine\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Header Files\Engine\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

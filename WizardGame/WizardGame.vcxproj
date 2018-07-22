@@ -141,6 +141,7 @@
     <ClInclude Include="gl.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KinematicProp.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Prop.h" />
     <ClInclude Include="PuzzleOne.h" />

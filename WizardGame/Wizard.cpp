@@ -51,3 +51,11 @@ void Wizard::render() {
 	_billboard.render();
 	glPopMatrix();
 }
+
+float Wizard::getX() {
+	return _x;
+}
+
+float Wizard::getZ() {
+	return _z;
+}

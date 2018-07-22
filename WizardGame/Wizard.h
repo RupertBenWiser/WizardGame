@@ -16,5 +16,7 @@ public:
 	void start();
 	void update();
 	void render();
+	float getX();
+	float getZ();
 };
 
