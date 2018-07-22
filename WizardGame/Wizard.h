@@ -1,14 +1,12 @@
 #pragma once
 #include <vector>
-#include "Prop.h"
+#include "KinematicProp.h"
 #include "Billboard.h"
 #include "AnimationController.h"
 
-class Wizard: public Prop
+class Wizard: public KinematicProp
 {
 private:
-	float _x, _y, _z;
-	float _vX, _vZ;
 	Billboard _billboard;
 	AnimationController _animationController;
 

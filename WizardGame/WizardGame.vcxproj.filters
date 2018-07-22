@@ -72,6 +72,9 @@
     <ClCompile Include="AnimationController.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="KinematicProp.cpp">
+      <Filter>Source Files\Game\Props</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="AnimationController.h">
       <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="KinematicProp.h">
+      <Filter>Header Files\Game\Props</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
