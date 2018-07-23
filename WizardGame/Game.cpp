@@ -4,6 +4,8 @@
 #include "Scene.h"
 #include "PuzzleOne.h"
 #include "Math.h"
+#include "FrameBuffer.h"
+#include <iostream>
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 void updateCamera();
@@ -13,14 +15,24 @@ Prop* focusedProp = nullptr;
 
 int main() {
 	GLFWwindow* window;
-
+	
 	if (!glfwInit()) {
 		return 1;
 	}
 
+	glewExperimental = GL_TRUE;
+
 	window = glfwCreateWindow(WIDTH, HEIGHT, "Wizard Game", NULL, NULL);
 
 	glfwMakeContextCurrent(window);
+
+	GLenum err = glewInit();
+	if (err != GLEW_OK) {
+		std::cout << glewGetErrorString(err) << std::endl;
+		int a;
+		std::cin >> a;
+		return 2;
+	}
 
 	glViewport(0, 0, WIDTH, HEIGHT);
 
@@ -31,6 +43,7 @@ int main() {
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_BLEND);
+	glEnable(GL_FRAMEBUFFER);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -42,6 +55,8 @@ int main() {
 	currentScene = &puzzleOne;
 	currentScene->start();
 
+	FrameBuffer framebuffer;
+
 	while (!glfwWindowShouldClose(window)) {
 		double startTime = glfwGetTime();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -51,11 +66,30 @@ int main() {
 		currentScene->update();
 		updateCamera();
 
+		framebuffer.bind();
 		glPushMatrix();
 		glRotatef(cameraRotation, 1, 0, 0);
 		glTranslatef(-cameraX, cameraY, -cameraZ - cameraOffset);
 		currentScene->render();
 		glPopMatrix();
+		framebuffer.unbind();
+
+		framebuffer.bindTexture();
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-1.0f, -1.0f, -5.0f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, -5.0f);
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(1.0f, 1.0f, -5.0f);
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-1.0f, 1.0f, -5.0f);
+
+		glEnd();
+		framebuffer.unbindTexture();
 
 		glfwSwapBuffers(window);
 
