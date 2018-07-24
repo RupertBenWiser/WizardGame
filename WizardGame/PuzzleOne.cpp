@@ -1,9 +1,11 @@
 #include "PuzzleOne.h"
+#include "Shadow.h"
 
 extern Prop* focusedProp;
 
 void PuzzleOne::start() {
 	this->props.push_back(new Floor("resources/images/floor.png", 0, 0, 20.0f, 20.0f));
+	this->props.push_back(new Shadow);
 	Wizard* wizard = new Wizard(0, 0, -5);
 	this->props.push_back(wizard);
 	focusedProp = wizard;

@@ -132,6 +132,7 @@
     <ClCompile Include="KinematicProp.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="PuzzleOne.cpp" />
+    <ClCompile Include="Shadow.cpp" />
     <ClCompile Include="StaticProp.cpp" />
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="Prop.h" />
     <ClInclude Include="PuzzleOne.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shadow.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateImpl.h" />
     <ClInclude Include="StaticProp.h" />

@@ -12,6 +12,7 @@ void updateCamera();
 
 Scene* currentScene = nullptr;
 Prop* focusedProp = nullptr;
+FrameBuffer* shadowFramebuffer = nullptr;
 
 int main() {
 	GLFWwindow* window;
@@ -51,21 +52,29 @@ int main() {
 	glfwSetKeyCallback(window, key_callback);
 
 	PuzzleOne puzzleOne;
+	shadowFramebuffer = new FrameBuffer;
 
 	currentScene = &puzzleOne;
 	currentScene->start();
 
-	FrameBuffer shadowFramebuffer;
-
 	while (!glfwWindowShouldClose(window)) {
 		double startTime = glfwGetTime();
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glfwPollEvents();
 
 		currentScene->update();
 		updateCamera();
 
+		shadowFramebuffer->bind();
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glPushMatrix();
+		glRotatef(90, 1, 0, 0);
+		glTranslatef(-focusedProp->getX(), cameraY, -focusedProp->getZ());
+		currentScene->render();
+		glPopMatrix();
+		shadowFramebuffer->unbind();
+		
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glPushMatrix();
 		glRotatef(cameraRotation, 1, 0, 0);
 		glTranslatef(-cameraX, cameraY, -cameraZ - cameraOffset);

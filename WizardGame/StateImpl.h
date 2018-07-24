@@ -1,5 +1,4 @@
 #pragma once
-#include "Prop.h"
 
 extern bool pressed[300];
 
