@@ -16,6 +16,7 @@ public:
 	void start();
 	void update();
 	void render();
+	void renderShadow();
 	float getX();
 	float getZ();
 };

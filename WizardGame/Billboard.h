@@ -36,6 +36,8 @@ public:
 
 	void render(void);
 
+	void renderShadow(void);
+
 	void setRotation(float r);
 };
 

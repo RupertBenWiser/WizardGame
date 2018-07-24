@@ -45,6 +45,16 @@ void Billboard::render(void) {
 	glPopMatrix();
 }
 
+void Billboard::renderShadow(void) {
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glPushMatrix();
+	glTranslatef(_x, _y, _z);
+	glRotatef(_r, 1.0f, 0.0f, 0.0f);
+	_model.render(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+	glColor3f(1.0f, 1.0f, 1.0f);
+}
+
 void Billboard::setRotation(float r) {
 	_r = r;
 }

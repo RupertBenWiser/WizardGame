@@ -55,7 +55,7 @@ int main() {
 	currentScene = &puzzleOne;
 	currentScene->start();
 
-	FrameBuffer framebuffer;
+	FrameBuffer shadowFramebuffer;
 
 	while (!glfwWindowShouldClose(window)) {
 		double startTime = glfwGetTime();
@@ -66,30 +66,11 @@ int main() {
 		currentScene->update();
 		updateCamera();
 
-		framebuffer.bind();
 		glPushMatrix();
 		glRotatef(cameraRotation, 1, 0, 0);
 		glTranslatef(-cameraX, cameraY, -cameraZ - cameraOffset);
 		currentScene->render();
 		glPopMatrix();
-		framebuffer.unbind();
-
-		framebuffer.bindTexture();
-		glBegin(GL_QUADS);
-		glTexCoord2f(0.0f, 0.0f);
-		glVertex3f(-1.0f, -1.0f, -5.0f);
-
-		glTexCoord2f(1.0f, 0.0f);
-		glVertex3f(1.0f, -1.0f, -5.0f);
-
-		glTexCoord2f(1.0f, 1.0f);
-		glVertex3f(1.0f, 1.0f, -5.0f);
-
-		glTexCoord2f(0.0f, 1.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f);
-
-		glEnd();
-		framebuffer.unbindTexture();
 
 		glfwSwapBuffers(window);
 

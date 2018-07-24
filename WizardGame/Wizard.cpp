@@ -52,6 +52,13 @@ void Wizard::render() {
 	glPopMatrix();
 }
 
+void Wizard::renderShadow() {
+	glPushMatrix();
+	glTranslatef(_x, _y, _z);
+	_billboard.renderShadow();
+	glPopMatrix();
+}
+
 float Wizard::getX() {
 	return _x;
 }
