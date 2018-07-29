@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="AnimationController.cpp" />
     <ClCompile Include="Billboard.cpp" />
+    <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="KinematicProp.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="PuzzleOne.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shadow.cpp" />
     <ClCompile Include="StaticProp.cpp" />
     <ClCompile Include="Wizard.cpp" />
@@ -139,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="AnimationController.h" />
     <ClInclude Include="Billboard.h" />
+    <ClInclude Include="FileLoader.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="FrameBuffer.h" />
     <ClInclude Include="gl.h" />
@@ -149,11 +152,18 @@
     <ClInclude Include="Prop.h" />
     <ClInclude Include="PuzzleOne.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="Shadow.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateImpl.h" />
     <ClInclude Include="StaticProp.h" />
     <ClInclude Include="Wizard.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DefaultShader.frag" />
+    <None Include="DefaultShader.vert" />
+    <None Include="ShadowShader.frag" />
+    <None Include="ShadowShader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -49,6 +49,15 @@
     <Filter Include="Header Files\Engine\Helpers">
       <UniqueIdentifier>{d3a3fed5-759d-423d-a6c1-29ee99e17cb5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Shader">
+      <UniqueIdentifier>{557a6b38-1da5-4597-8dba-58a99f9a3ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Shader">
+      <UniqueIdentifier>{3b8cd2a4-b41e-4ad9-853d-663973cd1ba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders">
+      <UniqueIdentifier>{3e392686-f080-40fe-94f2-662592d8dcb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -85,7 +94,13 @@
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Shadow.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLoader.cpp">
+      <Filter>Source Files\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +153,27 @@
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Shadow.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DefaultShader.vert">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="DefaultShader.frag">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="ShadowShader.vert">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="ShadowShader.frag">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

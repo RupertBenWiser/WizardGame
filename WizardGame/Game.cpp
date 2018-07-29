@@ -5,6 +5,7 @@
 #include "PuzzleOne.h"
 #include "Math.h"
 #include "FrameBuffer.h"
+#include "Shader.h"
 #include <iostream>
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
@@ -70,10 +71,10 @@ int main() {
 		glPushMatrix();
 		glRotatef(90, 1, 0, 0);
 		glTranslatef(-focusedProp->getX(), cameraY, -focusedProp->getZ());
-		currentScene->render();
+		currentScene->renderShadow();
 		glPopMatrix();
 		shadowFramebuffer->unbind();
-		
+
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glPushMatrix();
 		glRotatef(cameraRotation, 1, 0, 0);
